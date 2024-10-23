@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pokemon.name}">Detalles de Pokémon</title>
+</head>
+<body>
+<h1 th:text="${pokemon.name}">Nombre del Pokémon </h1>
+<p>Altura: <span th:text="${pokemon.height}">0</span></p>
+<p>Peso: <span th:text="${pokemon.weight}">0</span></p>
+<h2>Habilidades:</h2>
+<ul>
+    <li th:each="ability : ${pokemon.abilities}">
+        <span th:text="${ability.name}"></span>
+    </li>
+</ul>
+<a href="/pokemons">Volver a la lista</a>
+</body>
+</html>

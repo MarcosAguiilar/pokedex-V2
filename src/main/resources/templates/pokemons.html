@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>Pokémons</title>
+</head>
+<body>
+<h1>Lista de Pokémons</h1>
+<ul>
+    <li th:each="pokemon : ${pokemons}">
+        <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" th:text="${pokemon.name}">Nombre del Pokémon</a>
+    </li>
+</ul>
+</body>
+</html>
+
