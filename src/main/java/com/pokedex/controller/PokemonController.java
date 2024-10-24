@@ -30,7 +30,7 @@ public class PokemonController {
     public String getPokemonDetails(@PathVariable String id, Model model) {
         PokemonDetail pokemonDetail = pokemonService.getPokemonDetails(id);
         model.addAttribute("pokemon", pokemonDetail);
-        return "pokemonDetails"; // Nombre de la nueva vista
+        return "pokemonDetails";
     }
 
 }

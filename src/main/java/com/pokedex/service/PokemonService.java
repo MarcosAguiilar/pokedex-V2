@@ -19,9 +19,11 @@ public class PokemonService {
     }
 
     public PokemonDetail getPokemonDetails(String id) {
-        String url = "https://pokeapi.co/api/v2/pokemon/" + id; // Ajusta la URL para obtener detalles
+        String url = "https://pokeapi.co/api/v2/pokemon/" + id;
         return restTemplate.getForObject(url, PokemonDetail.class);
     }
+
+
 
 
 
