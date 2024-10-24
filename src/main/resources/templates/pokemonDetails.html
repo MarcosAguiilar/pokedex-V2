@@ -5,9 +5,10 @@
 </head>
 <body>
 <h1 th:text="${pokemon.name}">Nombre del Pokémon</h1>
-<img th:src="${pokemon.sprites.front_default}" alt="Imagen de Pokémon" />
-<p>Altura: <span th:text="${pokemon.height}">0</span></p>
-<p>Peso: <span th:text="${pokemon.weight}">0</span></p>
+<img th:src="${pokemon.sprites.front_default}" alt="Imagen de Pokémon Normal" />
+<img th:src="${pokemon.sprites.front_shiny}" alt="Imagen de Pokémon Shiny" />
+<p>Altura: <span th:text="${pokemon.height}">0</span> metros</p>
+<p>Peso: <span th:text="${pokemon.weight}">0</span> kg</p>
 
 <h2>Tipos:</h2>
 <ul>

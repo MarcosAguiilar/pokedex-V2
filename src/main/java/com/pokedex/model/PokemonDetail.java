@@ -37,6 +37,7 @@ public class PokemonDetail {
     @Data
     public static class Sprites {
         private String front_default;
+        private String front_shiny;
     }
 
     @Data

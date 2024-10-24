@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,11 +21,15 @@ public class PokemonController {
     }
 
     @GetMapping("/pokemons")
-    public String getAllPokemons(Model model) {
-        List<PokemonList.PokemonSummary> pokemons = pokemonService.getAllPokemons1gen();
+    public String getPokemonList(@RequestParam(defaultValue = "0") int page, Model model) {
+        int limit = 50;
+        int offset = page * limit;
+        List<PokemonList.PokemonSummary> pokemons = pokemonService.getPokemonList(limit, offset);
         model.addAttribute("pokemons", pokemons);
+        model.addAttribute("currentPage", page);
         return "pokemons";
     }
+
 
     @GetMapping("/pokemon/{id}")
     public String getPokemonDetails(@PathVariable String id, Model model) {
