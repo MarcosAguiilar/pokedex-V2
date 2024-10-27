@@ -10,18 +10,18 @@
     <div th:each="pokemon : ${pokemons}">
         <div class="pokemon-item">
             <div class="num-pokedex">
-                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" th:text="${pokemon.id}" alt="Número en la Pokedex"></a>
+                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" th:text="${pokemon.id}" alt="Número en la Pokedex" style="color: black; text-decoration: none;"></a>
             </div>
             <div class="pokemon-img">
-                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" title="Sprite de Pokemon Normal">
+                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" title="Sprite de Pokemon Normal" style="text-decoration: none;">
                 <img th:src="${pokemon.sprites.front_default}" alt="Sprite de [[${pokemon.name}]] Normal"/>
                 </a>
-                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" title="Sprite de Pokemon Shiny">
+                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" title="Sprite de Pokemon Shiny" style="text-decoration: none;">
                     <img th:src="${pokemon.sprites.front_shiny}" alt="Sprite de [[${pokemon.name}]] Shiny" />
                 </a>
             </div>
             <div class="pokemon-name">
-                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" th:text="${pokemon.name.toUpperCase()}">Nombre del Pokémon</a>
+                <a th:href="@{/pokemon/{id}(id=${pokemon.name})}" th:text="${pokemon.name.toUpperCase()}" style="color: black; text-decoration: none;">Nombre del Pokémon</a>
             </div>
 
         </div>
@@ -29,10 +29,10 @@
 </div>
 <div class="btn-page">
     <div class="btn-next">
-        <a th:if="${currentPage > 0}" th:href="@{/pokemons(page=${currentPage - 1})}">Anterior</a>
+        <a th:if="${currentPage > 0}" th:href="@{/pokemons(page=${currentPage - 1})}" style="color: white; text-decoration: none;">Anterior</a>
     </div>
     <div class="btn-previous">
-        <a th:href="@{/pokemons(page=${currentPage + 1})}">Siguiente</a>
+        <a th:href="@{/pokemons(page=${currentPage + 1})}" style="color: white; text-decoration: none;">Siguiente</a>
     </div>
 </div>
 </body>

@@ -16,11 +16,10 @@ import java.util.List;
 @Controller
 public class PokemonController {
 
-    private final PokemonService pokemonService;
+    @Autowired
+    private PokemonService pokemonService;
 
-    public PokemonController(PokemonService pokemonService) {
-        this.pokemonService = pokemonService;
-    }
+
 
     @GetMapping("/pokemons")
     public String getPokemonList(@RequestParam(defaultValue = "0") int page, Model model) {
