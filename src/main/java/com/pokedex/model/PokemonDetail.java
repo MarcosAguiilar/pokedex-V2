@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class PokemonDetail {
+    private int id;
     private String name;
     private int height;
     private int weight;
@@ -13,6 +14,7 @@ public class PokemonDetail {
     private List<Type> types;
     private Sprites sprites;
     private List<Stat> stats;
+
 
     @Data
     public static class Ability {

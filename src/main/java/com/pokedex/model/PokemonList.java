@@ -15,6 +15,7 @@ public class PokemonList {
         private String url;
         @Setter
         private PokemonDetail.Sprites sprites;
+        private int id;
 
 
         @Data

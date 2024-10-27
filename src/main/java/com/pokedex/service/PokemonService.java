@@ -1,5 +1,6 @@
 package com.pokedex.service;
 
+import com.pokedex.model.Pokemon;
 import com.pokedex.model.PokemonDetail;
 import com.pokedex.model.PokemonList;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.Objects;
 public class PokemonService {
 
     private final RestTemplate restTemplate = new RestTemplate();
+
 
     public List<PokemonList.PokemonSummary> getPokemonList(int limit, int offset) {
         // Hacemos la primera llamada para obtener la lista de Pokémon
@@ -30,6 +32,9 @@ public class PokemonService {
             // Asignamos los sprites desde los detalles
             pokemon.setSprites(details.getSprites());
 
+            // Asignamos el id desde los detalles
+            pokemon.setId(details.getId());
+
             // Agregamos el Pokémon con los detalles completos a la lista
             detailedPokemonList.add(pokemon);
         }
@@ -37,15 +42,10 @@ public class PokemonService {
         return detailedPokemonList;
     }
 
-
-
     public PokemonDetail getPokemonDetails(String id) {
         String url = "https://pokeapi.co/api/v2/pokemon/" + id;
         return restTemplate.getForObject(url, PokemonDetail.class);
     }
-
-
-
 
 
 }

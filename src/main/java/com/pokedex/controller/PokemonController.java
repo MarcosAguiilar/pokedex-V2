@@ -1,8 +1,10 @@
 package com.pokedex.controller;
 
+import com.pokedex.model.Pokemon;
 import com.pokedex.model.PokemonDetail;
 import com.pokedex.model.PokemonList;
 import com.pokedex.service.PokemonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +39,8 @@ public class PokemonController {
         model.addAttribute("pokemon", pokemonDetail);
         return "pokemonDetails";
     }
+
+
 
 }
 

@@ -1,0 +1,77 @@
+body{
+    background-color: #333333;
+    color: white;
+}
+
+.pokemon-grid{
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    display: grid;
+    border-radius: 10px;
+    padding: 40px;
+    gap: 15px;
+    align-content: center;
+}
+
+.pokemon-name{
+    padding: 2px;
+}
+
+.num-pokedex{
+    text-align: end;
+}
+
+.pokemon-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #BFF7DC;
+}
+
+.pokemon-header img {
+    width: 150px;
+}
+
+.pokemon-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-info, .pokemon-types, .pokemon-abilities, .pokemon-stats {
+    color: black;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #BFF7DC;
+    border-radius: 8px;
+    align-content: center;
+}
+
+.btn-page, .btn-vovler{
+    background-color: #569e71;
+    border: white;
+    color: black;
+    margin: auto;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: list-item;
+}
+
+.pokemon-header h1{
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #569e71;
+    border-radius: 8px;
+    margin: auto;
+}
+
+h3{
+    color: black;
+    align-text: center;
+}

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${pokemon.name}">Detalles de Pokémon</title>
+    <title>Detalles del Pokémon</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-<h1 th:text="${pokemon.name}">Nombre del Pokémon</h1>
-<img th:src="${pokemon.sprites.front_default}" alt="Imagen de Pokémon Normal" />
-<img th:src="${pokemon.sprites.front_shiny}" alt="Imagen de Pokémon Shiny" />
-<p>Altura: <span th:text="${pokemon.height}">0</span> metros</p>
-<p>Peso: <span th:text="${pokemon.weight}">0</span> kg</p>
+<div class="pokemon-details-container">
+    <div class="pokemon-header">
+        <img th:src="${pokemon.sprites.front_default}" alt="Sprite de [[${pokemon.name}]] Normal">
+        <img th:src="${pokemon.sprites.front_shiny}" alt="Sprite de [[${pokemon.name}]] Shiny" />
+        <h1 th:text="${pokemon.name.toUpperCase()}"></h1>
+    </div>
 
-<h2>Tipos:</h2>
-<ul>
-    <li th:each="type : ${pokemon.types}">
-        <span th:text="${type.type.name}">Tipo</span>
-    </li>
-</ul>
+    <div class="pokemon-info">
+        <p>Altura: <span th:text="${pokemon.height}"></span></p>
+        <p>Peso: <span th:text="${pokemon.weight}"></span></p>
+    </div>
 
-<h2>Habilidades:</h2>
-<ul>
-    <li th:each="ability : ${pokemon.abilities}">
-        <span th:text="${ability.ability.name}">Habilidad</span>
-    </li>
-</ul>
+    <div class="pokemon-types">
+        <h3>Tipos:</h3>
+        <ul>
+            <li th:each="type : ${pokemon.types}" th:text="${type.type.name}"></li>
+        </ul>
+    </div>
 
-<h2>Estadísticas:</h2>
-<ul>
-    <li th:each="stat : ${pokemon.stats}">
-        <span th:text="${stat.stat.name}">Estadística</span>:
-        <span th:text="${stat.base_stat}">Valor</span>
-    </li>
-</ul>
+    <div class="pokemon-abilities">
+        <h3>Habilidades:</h3>
+        <ul>
+            <li th:each="ability : ${pokemon.abilities}" th:text="${ability.ability.name}"></li>
+        </ul>
+    </div>
 
-<a href="/pokemons">Volver a la lista</a>
+    <div class="pokemon-stats">
+        <h3>Estadísticas:</h3>
+        <ul>
+            <li th:each="stat : ${pokemon.stats}">
+                <p th:text="${stat.stat.name} + ': ' + ${stat.base_stat}"></p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<a class="btn-vovler" href="/pokemons">Volver a la lista</a>
 </body>
 </html>
 
